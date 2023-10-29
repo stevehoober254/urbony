@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Button, Img, List, Text } from "components";
 
 type LandingPageHeaderProps = React.DetailedHTMLProps<
@@ -9,6 +11,8 @@ type LandingPageHeaderProps = React.DetailedHTMLProps<
   Partial<{}>;
 
 const LandingPageHeader: React.FC<LandingPageHeaderProps> = (props) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <header className={props.className}>
@@ -81,8 +85,9 @@ const LandingPageHeader: React.FC<LandingPageHeaderProps> = (props) => {
               Property{" "}
             </Text>
             <Text
-              className="text-base text-gray-900 w-auto"
+              className="common-pointer text-base text-gray-900 w-auto"
               size="txtManropeSemiBold16"
+              onClick={() => navigate("/")}
             >
               Blog
             </Text>
